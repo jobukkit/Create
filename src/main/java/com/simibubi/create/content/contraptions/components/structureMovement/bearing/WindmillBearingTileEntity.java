@@ -8,8 +8,13 @@ import com.simibubi.create.foundation.tileEntity.behaviour.scrollvalue.INamedIco
 import com.simibubi.create.foundation.tileEntity.behaviour.scrollvalue.ScrollOptionBehaviour;
 import com.simibubi.create.foundation.utility.Lang;
 
+import net.minecraft.block.Block;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.Tag;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
 public class WindmillBearingTileEntity extends MechanicalBearingTileEntity {
@@ -34,9 +39,20 @@ public class WindmillBearingTileEntity extends MechanicalBearingTileEntity {
 		assembleNextTick = cancelAssembly;
 	}
 
+	private boolean isOutdoors() {
+		BlockPos pos = this.getBlockPosition().up(2);
+		if (world == null || !world.isSkyVisible(pos))
+			return false;
+		for (BlockPos wind = new BlockPos(pos.getX(), 180, pos.getZ()); wind.getY() > pos.getY(); wind = wind.down()) {
+			if (!world.isAirBlock(wind))
+				return false;
+		}
+		return true;
+	}
+
 	@Override
 	public float getGeneratedSpeed() {
-		if (!running)
+		if (!running || !isOutdoors())
 			return 0;
 		if (movedContraption == null)
 			return lastGeneratedSpeed;

@@ -109,8 +109,8 @@ public class BearingScenes {
 		scene.overlay.showText(60)
 			.pointAt(util.vector.topOf(windmill))
 			.placeNearTarget()
-			.text("Activated with Right-Click, the Windmill Bearing will start providing Rotational Force");
-		scene.idle(70);
+			.text("Activated with Right-Click, the Windmill Bearing will start providing Rotational Force (if it's outside, not on the inside of a Biosphere)");
+		scene.idle(150);
 
 		scene.overlay.showText(60)
 			.pointAt(util.vector.blockSurface(gaugePos, Direction.WEST))

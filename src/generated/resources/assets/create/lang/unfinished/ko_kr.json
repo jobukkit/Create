@@ -2103,7 +2103,7 @@
 	"create.ponder.windmill_source.header": "UNLOCALIZED: Generating Rotational Force using Windmill Bearings",
 	"create.ponder.windmill_source.text_1": "UNLOCALIZED: Windmill Bearings attach to the block in front of them",
 	"create.ponder.windmill_source.text_2": "UNLOCALIZED: If enough Sail-like blocks are attached to the block, it can act as a Windmill",
-	"create.ponder.windmill_source.text_3": "UNLOCALIZED: Activated with Right-Click, the Windmill Bearing will start providing Rotational Force",
+	"create.ponder.windmill_source.text_3": "UNLOCALIZED: Activated with Right-Click, the Windmill Bearing will start providing Rotational Force (if it's outside, not on the inside of a Biosphere)",
 	"create.ponder.windmill_source.text_4": "UNLOCALIZED: The Amount of Sail Blocks determine its Rotation Speed",
 	"create.ponder.windmill_source.text_5": "UNLOCALIZED: Use a Wrench to configure its rotation direction",
 	"create.ponder.windmill_source.text_6": "UNLOCALIZED: Right-click the Bearing anytime to stop and edit the Structure again",
